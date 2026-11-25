@@ -1,6 +1,9 @@
 :root { color-scheme: light; --red: #ff0704; --ink: #222337; --muted: #777a86; --paper: #fff; --gray: #eee; --edge: 15px; font: 100%/1.32 -apple-system,BlinkMacSystemFont,"Helvetica Neue",Arial,sans-serif; -webkit-text-size-adjust: 100%; }
 * { box-sizing: border-box; }
 body { margin: 0; color: var(--ink); background: #dfe3e7; }
+@media (max-width: 480px) {
+  html, body { background-color: var(--red); overscroll-behavior-y: none; }
+}
 [hidden] { display: none !important; }
 button, input, select, textarea { font: inherit; }
 button, a { -webkit-tap-highlight-color: transparent; }
@@ -10,7 +13,7 @@ button:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible
 p, h1, h2, h3, dl, dd { margin: 0; }
 img { max-width: 100%; display: block; }
 .app { position: relative; display: grid; grid-template-rows: auto minmax(0,1fr) auto; height: 100vh; height: 100dvh; max-width: 480px; margin: 0 auto; background: var(--paper); }
-#header { z-index: 2; padding-top: env(safe-area-inset-top); background: var(--red); color: white; }
+#header { position: sticky; top: 0; z-index: 2; padding-top: env(safe-area-inset-top, 0px); background: var(--red); color: white; }
 .titlebar { min-height: 49px; display: grid; grid-template-columns: 59px minmax(0,1fr) 59px; align-items: center; text-align: center; }
 .titlebar h1 { grid-column: 2; font-size: clamp(15px,4.4vw,19px); font-weight: 500; line-height: 1.1; }
 .titlebar .back { grid-column: 1; grid-row: 1; display: grid; place-items: center; min-height: 44px; }
