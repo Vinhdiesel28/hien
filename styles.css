@@ -2,7 +2,10 @@
 * { box-sizing: border-box; }
 body { margin: 0; color: var(--ink); background: #dfe3e7; }
 @media (max-width: 480px) {
-  html, body { height: 100%; overflow: hidden; background-color: var(--red); overscroll-behavior-y: none; }
+  html, body { height: 100%; overflow: hidden; overscroll-behavior-y: none; }
+  html { background: linear-gradient(var(--red) 50%, var(--paper) 50%) var(--paper); }
+  body { background: transparent; }
+  #footer:not(:empty) { position: sticky; bottom: 0; z-index: 1; background: var(--paper); }
 }
 [hidden] { display: none !important; }
 button, input, select, textarea { font: inherit; }
